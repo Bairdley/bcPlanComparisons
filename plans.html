@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="text/javascript" src="comparePlans.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width">
+</head>
+  <body>
+    <p id="title">Plan Comparison</p>
+<div id="form">
+		<label for="fromPlanList">Switching from:</label>
+		<select id="fromPlanList" onchange="getFromPlan()">
+		  <option value="selectaplan">choose a plan</option>
+		  <optgroup label="Original Plans">
+  			<option value="bronze">Bronze</option>
+  			<option value="silver1">Silver (1)</option>
+  			<option value="gold1">Gold (1)</option>
+  			<option value="plat1">Platinum (1)</option>
+  			<option value="diamond">Diamond</option>
+		  </optgroup>
+		  <optgroup label="2nd Iteration of Plans">
+  			<option value="silver2">Silver (2)</option>
+  			<option value="gold2">Gold (2)</option>
+  			<option value="plat2">Platinum (1)</option>
+  			<option value="platplus">Platinum Plus</option>
+		  </optgroup>
+  		  <optgroup label="3rd Iteration of Plans">
+  			<option value="silver3">Silver (3)</option>
+  			<option value="gold3">Gold (3)</option>
+  			<option value="plat3">Platinum (3)</option>
+		  </optgroup>
+		  <optgroup label="Current Plans">
+  			<option value="standard">Standard</option>
+  			<option value="plus">Plus</option>
+  			<option value="enterprise">Enterprise</option>
+		  </optgroup>
+		</select>
+		<label for="toPlanList">Switching to:</label>
+		<select id="toPlanList" onchange="getToPlan()">
+		  <option value="selectaplan">choose a plan</option>
+		  <option value="toStandard">Standard</option>
+		  <option value="toPlus">Plus</option>
+		  <option value="toEnterprise">Enterprise</option>
+		</select>
+    <button onclick="comparePlans()">compare</button>
+</div>
+<table id="planComparisons" class="pC1">
+  <tr>
+	  <th>Features Gained</th>
+	  <th>Features Lost</th>
+	  <th>Price Change</th>
+  </tr>
+  <tr>
+	  <td id="gainedList">
+	  </td>
+  	<td id="lostList">
+	  </td>
+	  <td id="priceChange">
+    </td>
+  </tr>
+</table>
+<table id="planComparisons2" class="pC2">
+  <tr>
+	  <th>Features Gained</th>
+    </tr>
+	  <th>Features Lost</th>
+  </tr>
+  <tr>
+	  <th>Price Change</th>
+  </tr>
+  <tr>
+	  <td id="gainedList2">
+	  </td>
+  	<td id="lostList2">
+	  </td>
+	  <td id="priceChange2">
+    </td>
+  </tr>
+</table>
+    <!--<div id="planComparisons">
+      <div id="featuresGained">
+        <h2>Features Gained</h2>
+        <ul id="gainedList"></ul>
+      </div>
+      <div id="featuresLost">
+        <h2>Features Lost</h2>
+        <ul id="lostList"></ul>
+      </div>
+      <div id="priceChange">
+        <h2>Price Change</h2>
+        <ul></ul>
+      </div>
+    </div>-->
+  </body>
+</html>

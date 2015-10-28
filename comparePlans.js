@@ -5,7 +5,7 @@ PLAN DETAILS & GETTING USER INPUT
 //Name, Features, and Price
 var planDetails = [
                     'Name',
-					'Price',
+		    'Price',
                     'Unlimited Products',
                     'Unlimited Storage',
                     'No Transaction Fee',
@@ -28,16 +28,16 @@ var plansArr = [
 	['Silver (1)', 39.95, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
 	['Gold (1)', 79.95, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
 	['Platinum (1)', 149.95, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
-  ['Diamond', 299.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0],
+	['Diamond', 299.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0],
 	['Silver (2)', 34.95, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-  ['Gold (2)', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
+	['Gold (2)', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
 	['Platinum (2)', 199.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
 	['Platinum Plus', 349.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0],
 	['Silver (3)', 29.95, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
 	['Gold (3)', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
 	['Platinum (3)', 199.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
-  ['Standard', 29.95, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],	
-  ['Plus', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	['Standard', 29.95, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],	
+	['Plus', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	['Enterprise', 'Custom', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
@@ -101,11 +101,11 @@ var comparePlans = function() {
 		  toPrice = toPlan[1];
 	  if (isNaN(toPrice)) { 
 	  priceChange.innerHTML += '<p>$' + fromPrice + ' to ' + toPrice + '</p>' +
-							   '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
+			           '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
 	  }
 	  else{
       priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
-							   '<p><strong>$' + priceDifference + ' difference</strong></p>';
+			       '<p><strong>$' + priceDifference + ' difference</strong></p>';
 	  }
       var showComparisons = document.getElementById('planComparisons');
       showComparisons.style.display = 'block';

@@ -1,96 +1,88 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <script type="text/javascript" src="comparePlans.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-  <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/template/main.css">
+    <script type="text/javascript" src="/template/comparePlans.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width">
 </head>
-  <body>
+
+<body>
     <p id="title">Plan Comparison</p>
-<div id="form">
-		<label for="fromPlanList">Switching from:</label>
-		<select id="fromPlanList" onchange="getFromPlan()">
-		  <option value="selectaplan">choose a plan</option>
-		  <optgroup label="Original Plans">
-  			<option value="bronze">Bronze</option>
-  			<option value="silver1">Silver (1)</option>
-  			<option value="gold1">Gold (1)</option>
-  			<option value="plat1">Platinum (1)</option>
-  			<option value="diamond">Diamond</option>
-		  </optgroup>
-		  <optgroup label="2nd Iteration of Plans">
-  			<option value="silver2">Silver (2)</option>
-  			<option value="gold2">Gold (2)</option>
-  			<option value="plat2">Platinum (1)</option>
-  			<option value="platplus">Platinum Plus</option>
-		  </optgroup>
-  		  <optgroup label="3rd Iteration of Plans">
-  			<option value="silver3">Silver (3)</option>
-  			<option value="gold3">Gold (3)</option>
-  			<option value="plat3">Platinum (3)</option>
-		  </optgroup>
-		  <optgroup label="Current Plans">
-  			<option value="standard">Standard</option>
-  			<option value="plus">Plus</option>
-  			<option value="enterprise">Enterprise</option>
-		  </optgroup>
-		</select>
-		<label for="toPlanList">Switching to:</label>
-		<select id="toPlanList" onchange="getToPlan()">
-		  <option value="selectaplan">choose a plan</option>
-		  <option value="toStandard">Standard</option>
-		  <option value="toPlus">Plus</option>
-		  <option value="toEnterprise">Enterprise</option>
-		</select>
-    <button onclick="comparePlans()">compare</button>
-</div>
-<table id="planComparisons" class="pC1">
-  <tr>
-	  <th>Features Gained</th>
-	  <th>Features Lost</th>
-	  <th>Price Change</th>
-  </tr>
-  <tr>
-	  <td id="gainedList">
-	  </td>
-  	<td id="lostList">
-	  </td>
-	  <td id="priceChange">
-    </td>
-  </tr>
-</table>
-<table id="planComparisons2" class="pC2">
-  <tr>
-	  <th>Features Gained</th>
-    </tr>
-	  <th>Features Lost</th>
-  </tr>
-  <tr>
-	  <th>Price Change</th>
-  </tr>
-  <tr>
-	  <td id="gainedList2">
-	  </td>
-  	<td id="lostList2">
-	  </td>
-	  <td id="priceChange2">
-    </td>
-  </tr>
-</table>
-    <!--<div id="planComparisons">
-      <div id="featuresGained">
-        <h2>Features Gained</h2>
-        <ul id="gainedList"></ul>
-      </div>
-      <div id="featuresLost">
-        <h2>Features Lost</h2>
-        <ul id="lostList"></ul>
-      </div>
-      <div id="priceChange">
-        <h2>Price Change</h2>
-        <ul></ul>
-      </div>
-    </div>-->
-  </body>
+    <div id="form">
+        <label for="fromPlanList">Switching from:</label>
+        <select id="fromPlanList" onchange="getFromPlan()">
+            <option value="selectaplan">choose a plan</option>
+            <optgroup label="Original Plans">
+                <option value="bronze">Bronze (Original)</option>
+                <option value="silver1">Silver (Original)</option>
+                <option value="gold1">Gold (Original)</option>
+                <option value="plat1">Platinum (Original)</option>
+                <option value="diamond">Diamond (Original)</option>
+            </optgroup>
+            <optgroup label="Bigcommerce Next">
+                <option value="silver2">Silver (Next)</option>
+                <option value="gold2">Gold (Next)</option>
+                <option value="plat2">Platinum (Next)</option>
+                <option value="platplus">Platinum Plus (Next)</option>
+            </optgroup>
+            <optgroup label="2015 Pricing">
+                <option value="standard">Standard (Old)</option>
+                <option value="plus">Plus (Old)</option>
+                <option value="enterprise">Enterprise (Old)</option>
+            </optgroup>
+            <optgroup label="Current Plans">
+                <option value="standard">Standard (New)</option>
+                <option value="plus">Plus (New)</option>
+                <option value="pro">Pro (New)</option>
+                <option value="enterprise">Enterprise (New)</option>
+            </optgroup>
+        </select>
+        <label for="toPlanList">Switching to:</label>
+        <select id="toPlanList" onchange="getToPlan()">
+            <option value="selectaplan">choose a plan</option>
+            <option value="toStandard">Standard (New)</option>
+            <option value="toPlus">Plus (New)</option>
+            <option value="pro">Pro (New)</option>
+            <option value="toEnterprise">Enterprise (New)</option>
+        </select>
+        <button onclick="comparePlans()">compare</button>
+    </div>
+    <table id="planComparisons" class="pC1">
+        <tr>
+            <th class="tableTitle">Features Gained</th>
+            <th class="tableTitle">Features Lost</th>
+            <th class="tableTitle">Price Change</th>
+        </tr>
+        <tr>
+            <td id="gainedList">
+            </td>
+            <td id="lostList">
+            </td>
+            <td id="priceChange">
+            </td>
+        </tr>
+    </table>
+    <table id="planComparisons2" class="pC2">
+        <tr>
+            <th class="tableTitle">Features Gained</th>
+        </tr>
+        <th class="tableTitle">Features Lost</th>
+        </tr>
+        <tr>
+            <th class="tableTitle">Price Change</th>
+        </tr>
+        <tr>
+            <td id="gainedList2">
+            </td>
+            <td id="lostList2">
+            </td>
+            <td id="priceChange2">
+            </td>
+        </tr>
+    </table>
+    <span id="signature">A tool by <a href="https://github.com/Bairdley">Brad Mitchell</a></span>
+</body>
+
 </html>

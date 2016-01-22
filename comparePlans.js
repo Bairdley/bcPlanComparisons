@@ -1,44 +1,50 @@
-
 /********************************
 PLAN DETAILS & GETTING USER INPUT
 ********************************/
 //Name, Features, and Price
 var planDetails = [
-                    'Name',
-		    'Price',
+                    'Name', 
+                    'Price',
                     'Unlimited Products',
                     'Unlimited Storage',
-                    'No Transaction Fee',
                     'Ability to install SSL purchased through BC',
-                    'Abandoned Cart Saver',
-                    'Omni-Channel Sales Tools',
-                    'Customer Groups',
-                    'API Support',
-                    'Site-wide HTTPS',
                     'Ability to Install SSL purchased through third-party',
-                    'Faceted Search',
+                    'Google Shopping',
+                    'eBay Listings',
+                    'No Transaction Fee!',
+                    'Abandoned Cart Saver',
+                    'Customer Groups',
+                    'Shopping Comparison Sites (Nextag, Shopzilla, etc.)',
+                    'Site-wide HTTPS',
+                    'Sift Science (fraud protection app)',
                     'Google Trusted Stores automation',
-                    'SLA up-time agreement (optional)',
-                    'Priority Support',
+                    'API Support',
+                    'Faceted Search',
+                    'SLA up-time agreement (optional, depends on tier)',
+                    'Priority Support (depends on tier)',
+                    'Strategic Account Management (depends on tier)',
+                    'Dedicated Onboarding Assistant (depends on tier)',
                     'Migration and Data Transfer',
+                    'ShipperHQ'
 ];
 //Individual plans matched with planDetails
 var plansArr = [
-	['Bronze', 24.95, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Silver (1)', 39.95, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Gold (1)', 79.95, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Platinum (1)', 149.95, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
-	['Diamond', 299.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0],
-	['Silver (2)', 34.95, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Gold (2)', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Platinum (2)', 199.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
-	['Platinum Plus', 349.95, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0],
-	['Silver (3)', 29.95, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Gold (3)', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Platinum (3)', 199.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
-	['Standard', 29.95, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],	
-	['Plus', 79.95, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-	['Enterprise', 'Custom', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ['Bronze (Original)', 24.95, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Silver (Original)', 39.95, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Gold (Original)', 79.95, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Platinum (Original)', 149.95, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Diamond (Original)', 299.95, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Platinum Plus (Next)', 349.95, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+    ['Silver (Next)', 29.95, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Gold (Next)', 79.95, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Platinum (Next)', 199.95, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Standard (Old)', 29.95, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Plus (Old)', 79.95, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Enterprise (Old)', 'Custom', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    ['Standard (New)', 29.95, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Plus (New)', 79.95, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Pro (New)', 199.95, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Enterprise (New)', 'Custom', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
 //Get "Switching from" plan
@@ -88,7 +94,6 @@ var comparePlans = function() {
   if (toPlan === fromPlan) {
     alert("You chose the same plan twice, ya goof!")
   } else {
-
       for (var x = 2; x < planDetails.length; x++) {
         if (fromPlan[x] !== toPlan[x]) {
           fromPlan[x] < toPlan[x] ?
@@ -97,16 +102,15 @@ var comparePlans = function() {
         }
       }
       var priceDifference = Math.abs(fromPlan[1] - toPlan[1]).toFixed(2),
-		  fromPrice = fromPlan[1];
-		  toPrice = toPlan[1];
-	  if (isNaN(toPrice)) { 
-	  priceChange.innerHTML += '<p>$' + fromPrice + ' to ' + toPrice + '</p>' +
-			           '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
-	  }
-	  else{
-      priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
-			       '<p><strong>$' + priceDifference + ' difference</strong></p>';
-	  }
+          fromPrice = fromPlan[1];
+          toPrice = toPlan[1];
+      if (isNaN(toPrice)) { 
+      priceChange.innerHTML += '<p>$' + fromPrice + ' to ' + toPrice + '</p>' +
+                               '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
+      } else {
+      	  priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
+                               '<p><strong>$' + priceDifference + ' difference</strong></p>';
+      	}
       var showComparisons = document.getElementById('planComparisons');
       showComparisons.style.display = 'block';
     }

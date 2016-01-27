@@ -56,6 +56,9 @@ option:hover{
 #planComparisons{
 	display: none;
 }
+.tableTitle {
+	color: #00abc9;
+}
 table{
   background-color: white;
 	font-family: 'Open Sans';
@@ -96,6 +99,24 @@ button{
 .pC2 {
 	display: none;
 }
+
+#signature {
+	font-family: 'Open Sans';
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #00abc9;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
 /*@media only screen and (max-width: 800px){
 	.pC1 th, .pC1 tr, .pC1 td{
 		display: block;

@@ -55,25 +55,25 @@ var plansArr = [
       //variable fromPlan is given the value of the plan's features/name/price
 var fromPlan;
 function getFromPlan() {
-  var selected = document.getElementById('fromPlanList');
-  var planName = selected[selected.selectedIndex].text;
-  for (var i = 0; i < plansArr.length; i++) {
-    if (planName === plansArr[i][0]) {
-      fromPlan = plansArr[i];
+    var selected = document.getElementById('fromPlanList');
+    var planName = selected[selected.selectedIndex].text;
+    for (var i = 0; i < plansArr.length; i++) {
+        if (planName === plansArr[i][0]) {
+            fromPlan = plansArr[i];
+        }
     }
-  }
 }
 
 //Same logic as above
 var toPlan;
 var getToPlan = function() {
-  var selected = document.getElementById('toPlanList');
-  var planName = selected[selected.selectedIndex].text;
-  for (var i = 0; i < plansArr.length; i++) {
-    if (planName === plansArr[i][0]) {
-      toPlan = plansArr[i];
+    var selected = document.getElementById('toPlanList');
+    var planName = selected[selected.selectedIndex].text;
+    for (var i = 0; i < plansArr.length; i++) {
+        if (planName === plansArr[i][0]) {
+            toPlan = plansArr[i];
+        }
     }
-  }
 }
 
 /***************************************
@@ -88,33 +88,33 @@ COMPARING PLANS & OUTPUTTING DIFFERENCES
     //if opposite,
       //x iteration of planDetails is added to "Features Lost"
 var comparePlans = function() {
-  var gainIt = document.getElementById('gainedList'),
-      loseIt = document.getElementById('lostList'),
-      priceIt = document.getElementById('priceChange');
-      gainIt.innerHTML = '';
-      loseIt.innerHTML = '';
-      priceIt.innerHTML = '';
-  if (toPlan === fromPlan) {
-    alert("You chose the same plan twice, ya goof!")
-  } else {
-      for (var x = 2; x < planDetails.length; x++) {
-        if (fromPlan[x] !== toPlan[x]) {
-          fromPlan[x] < toPlan[x] ?
-          gainIt.innerHTML += '<p>' + planDetails[x] + '</p>' :
-          loseIt.innerHTML += '<p>' + planDetails[x] + '</p>';
+    var gainIt = document.getElementById('gainedList'),
+        loseIt = document.getElementById('lostList'),
+        priceIt = document.getElementById('priceChange');
+        gainIt.innerHTML = '';
+        loseIt.innerHTML = '';
+        priceIt.innerHTML = '';
+    if (toPlan === fromPlan) {
+        alert("You chose the same plan twice, ya goof!")
+    } else {
+        for (var x = 2; x < planDetails.length; x++) {
+            if (fromPlan[x] !== toPlan[x]) {
+                fromPlan[x] < toPlan[x] ?
+                gainIt.innerHTML += '<p>' + planDetails[x] + '</p>' :
+                loseIt.innerHTML += '<p>' + planDetails[x] + '</p>';
+            }
         }
-      }
-      var priceDifference = Math.abs(fromPlan[1] - toPlan[1]).toFixed(2),
-          fromPrice = fromPlan[1];
-          toPrice = toPlan[1];
-      if (isNaN(toPrice)) { 
-      priceChange.innerHTML += '<p>$' + fromPrice + ' to ' + toPrice + '</p>' +
-                               '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
-      } else {
-      	  priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
-                                   '<p><strong>$' + priceDifference + ' difference</strong></p>';
+        var priceDifference = Math.abs(fromPlan[1] - toPlan[1]).toFixed(2),
+            fromPrice = fromPlan[1];
+            toPrice = toPlan[1];
+        if (isNaN(toPrice)) { 
+            priceChange.innerHTML += '<p>$' + fromPrice + ' to ' + toPrice + '</p>' +
+                                     '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
+        } else {
+      	    priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
+                                     '<p><strong>$' + priceDifference + ' difference</strong></p>';
       	}
-      var showComparisons = document.getElementById('planComparisons');
-      showComparisons.style.display = 'block';
+        var showComparisons = document.getElementById('planComparisons');
+        showComparisons.style.display = 'block';
     }
 }

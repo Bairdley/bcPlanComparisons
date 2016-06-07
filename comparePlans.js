@@ -1,32 +1,34 @@
 /********************************
 PLAN DETAILS & GETTING USER INPUT
 ********************************/
+
 //Name, Features, and Price
 var planDetails = [
-                    'Name', 
-                    'Price',
-                    'Unlimited Products',
-                    'Unlimited Storage',
-                    'Ability to install SSL purchased through BC',
-                    'Ability to Install SSL purchased through third-party',
-                    'Google Shopping',
-                    'eBay Listings',
-                    'No Transaction Fee!',
-                    'Abandoned Cart Saver',
-                    'Customer Groups',
-                    'Shopping Comparison Sites (Nextag, Shopzilla, etc.)',
-                    'Site-wide HTTPS',
-                    'Sift Science (fraud protection app)',
-                    'Google Trusted Stores automation',
-                    'API Support',
-                    'Faceted Search',
-                    'SLA up-time agreement (optional, depends on tier)',
-                    'Priority Support (depends on tier)',
-                    'Strategic Account Management (depends on tier)',
-                    'Dedicated Onboarding Assistant (depends on tier)',
-                    'Migration and Data Transfer',
-                    'ShipperHQ'
+    'Name', 
+    'Price',
+    'Unlimited Products',
+    'Unlimited Storage',
+    'Ability to install SSL purchased through BC',
+    'Ability to Install SSL purchased through third-party',
+    'Google Shopping',
+    'eBay Listings',
+    'No Transaction Fee!',
+    'Abandoned Cart Saver',
+    'Customer Groups',
+    'Shopping Comparison Sites (Nextag, Shopzilla, etc.)',
+    'Site-wide HTTPS',
+    'Sift Science (fraud protection app)',
+    'Google Trusted Stores automation',
+    'API Support',
+    'Faceted Search',
+    'SLA up-time agreement (optional, depends on tier)',
+    'Priority Support (depends on tier)',
+    'Strategic Account Management (depends on tier)',
+    'Dedicated Onboarding Assistant (depends on tier)',
+    'Migration and Data Transfer',
+    'ShipperHQ'                
 ];
+
 //Individual plans matched with planDetails
 var plansArr = [
     ['Bronze (Original)', 24.95, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -50,7 +52,7 @@ var plansArr = [
 //Get "Switching from" plan
   //Compare dropdown selection with name string in plansArr
   //If dropdown selection matches plansArr string,
-  //variable fromPlan is given the value of the plan's features/name/price
+      //variable fromPlan is given the value of the plan's features/name/price
 var fromPlan;
 function getFromPlan() {
   var selected = document.getElementById('fromPlanList');
@@ -61,6 +63,7 @@ function getFromPlan() {
     }
   }
 }
+
 //Same logic as above
 var toPlan;
 var getToPlan = function() {
@@ -109,7 +112,7 @@ var comparePlans = function() {
                                '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
       } else {
       	  priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
-                               '<p><strong>$' + priceDifference + ' difference</strong></p>';
+                                   '<p><strong>$' + priceDifference + ' difference</strong></p>';
       	}
       var showComparisons = document.getElementById('planComparisons');
       showComparisons.style.display = 'block';

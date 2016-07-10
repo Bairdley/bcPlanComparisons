@@ -66,7 +66,7 @@ function getFromPlan() {
 
 //Same logic as above
 var toPlan;
-var getToPlan = function() {
+function getToPlan() {
     var selected = document.getElementById('toPlanList');
     var planName = selected[selected.selectedIndex].text;
     for (var i = 0; i < plansArr.length; i++) {

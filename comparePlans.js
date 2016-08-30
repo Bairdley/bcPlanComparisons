@@ -4,7 +4,7 @@ PLAN DETAILS & GETTING USER INPUT
 
 //Name, Features, and Price
 var planDetails = [
-    'Name', 
+    'Name',
     'Price',
     'Unlimited Products',
     'Unlimited Storage',
@@ -26,7 +26,7 @@ var planDetails = [
     'Strategic Account Management (depends on tier)',
     'Dedicated Onboarding Assistant (depends on tier)',
     'Migration and Data Transfer',
-    'ShipperHQ'                
+    'ShipperHQ'
 ];
 
 //Individual plans matched with planDetails
@@ -88,33 +88,38 @@ COMPARING PLANS & OUTPUTTING DIFFERENCES
     //if opposite,
       //x iteration of planDetails is added to "Features Lost"
 var comparePlans = function() {
-    var gainIt = document.getElementById('gainedList'),
-        loseIt = document.getElementById('lostList'),
-        priceIt = document.getElementById('priceChange');
-        gainIt.innerHTML = '';
-        loseIt.innerHTML = '';
-        priceIt.innerHTML = '';
-    if (toPlan === fromPlan) {
-        alert("You chose the same plan twice, ya goof!")
-    } else {
-        for (var x = 2; x < planDetails.length; x++) {
-            if (fromPlan[x] !== toPlan[x]) {
-                fromPlan[x] < toPlan[x] ?
-                gainIt.innerHTML += '<p>' + planDetails[x] + '</p>' :
-                loseIt.innerHTML += '<p>' + planDetails[x] + '</p>';
+    for (var y = 0; y < 2; y ++) {
+        var gainIt = document.getElementsByClassName('gainedList'),
+            loseIt = document.getElementsByClassName('lostList'),
+            priceIt = document.getElementsByClassName('priceChange');
+            gainIt[y].innerHTML = '';
+            loseIt[y].innerHTML = '';
+            priceIt[y].innerHTML = '';
+        if (toPlan === fromPlan) {
+            alert("You chose the same plan twice, ya goof!")
+        } else {
+            for (var x = 2; x < planDetails.length; x++) {
+                if (fromPlan[x] !== toPlan[x]) {
+                    fromPlan[x] < toPlan[x] ?
+                    gainIt[y].innerHTML += '<p>' + planDetails[x] + '</p>' :
+                    loseIt[y].innerHTML += '<p>' + planDetails[x] + '</p>';
+                }
+            }
+            var priceDifference = Math.abs(fromPlan[1] - toPlan[1]).toFixed(2),
+                fromPrice = fromPlan[1];
+                toPrice = toPlan[1];
+            if (isNaN(toPrice) || isNaN(fromPrice)) {
+                priceIt[y].innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
+                                        '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
+            } else {
+                  priceIt[y].innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
+                                         '<p><strong>$' + priceDifference + ' difference</strong></p>';
+              }
+            var showComparisons = document.getElementsByClassName('plan-compare');
+            for (var i = 0; i < 2; i ++) {
+                showComparisons[i].style.display = 'block';
             }
         }
-        var priceDifference = Math.abs(fromPlan[1] - toPlan[1]).toFixed(2),
-            fromPrice = fromPlan[1];
-            toPrice = toPlan[1];
-        if (isNaN(toPrice)) { 
-            priceChange.innerHTML += '<p>$' + fromPrice + ' to ' + toPrice + '</p>' +
-                                     '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
-        } else {
-      	    priceChange.innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
-                                     '<p><strong>$' + priceDifference + ' difference</strong></p>';
-      	}
-        var showComparisons = document.getElementById('planComparisons');
-        showComparisons.style.display = 'block';
     }
 }
+​

@@ -11,77 +11,79 @@
 <body>
     <p id="title">Plan Comparison</p>
     <div id="form">
-        <label for="fromPlanList">Switching from:</label>
-        <select id="fromPlanList" onchange="getFromPlan()">
-            <option value="selectaplan">choose a plan</option>
-            <optgroup label="Original Plans">
-                <option value="bronze">Bronze (Original)</option>
-                <option value="silver1">Silver (Original)</option>
-                <option value="gold1">Gold (Original)</option>
-                <option value="plat1">Platinum (Original)</option>
-                <option value="diamond">Diamond (Original)</option>
-            </optgroup>
-            <optgroup label="Bigcommerce Next">
-                <option value="silver2">Silver (Next)</option>
-                <option value="gold2">Gold (Next)</option>
-                <option value="plat2">Platinum (Next)</option>
-                <option value="platplus">Platinum Plus (Next)</option>
-            </optgroup>
-            <optgroup label="2015 Pricing">
-                <option value="standard">Standard (Old)</option>
-                <option value="plus">Plus (Old)</option>
-                <option value="enterprise">Enterprise (Old)</option>
-            </optgroup>
-            <optgroup label="Current Plans">
-                <option value="standard">Standard (New)</option>
-                <option value="plus">Plus (New)</option>
-                <option value="pro">Pro (New)</option>
-                <option value="enterprise">Enterprise (New)</option>
-            </optgroup>
-        </select>
-        <label for="toPlanList">Switching to:</label>
-        <select id="toPlanList" onchange="getToPlan()">
-            <option value="selectaplan">choose a plan</option>
-            <option value="toStandard">Standard (New)</option>
-            <option value="toPlus">Plus (New)</option>
-            <option value="pro">Pro (New)</option>
-            <option value="toEnterprise">Enterprise (New)</option>
-        </select>
+		<div>
+			<div>
+	        	<label for="fromPlanList">Switching from:</label>
+		        <select id="fromPlanList" onchange="getFromPlan()">
+		            <option value="selectaplan">choose a plan</option>
+		            <optgroup label="Original Plans">
+		                <option value="bronze">Bronze (Original)</option>
+		                <option value="silver1">Silver (Original)</option>
+		                <option value="gold1">Gold (Original)</option>
+		                <option value="plat1">Platinum (Original)</option>
+		                <option value="diamond">Diamond (Original)</option>
+		            </optgroup>
+		            <optgroup label="Bigcommerce Next">
+		                <option value="silver2">Silver (Next)</option>
+		                <option value="gold2">Gold (Next)</option>
+		                <option value="plat2">Platinum (Next)</option>
+		                <option value="platplus">Platinum Plus (Next)</option>
+		            </optgroup>
+		            <optgroup label="2015 Pricing">
+		                <option value="standard">Standard (Old)</option>
+		                <option value="plus">Plus (Old)</option>
+		                <option value="enterprise">Enterprise (Old)</option>
+		            </optgroup>
+		            <optgroup label="Current Plans">
+		                <option value="standard">Standard (New)</option>
+		                <option value="plus">Plus (New)</option>
+		                <option value="pro">Pro (New)</option>
+		                <option value="enterprise">Enterprise (New)</option>
+		            </optgroup>
+		        </select>
+			</div>
+			<div>
+		        <label for="toPlanList">Switching to:</label>
+		        <select id="toPlanList" onchange="getToPlan()">
+		            <option value="selectaplan">choose a plan</option>
+		            <option value="toStandard">Standard (New)</option>
+		            <option value="toPlus">Plus (New)</option>
+		            <option value="pro">Pro (New)</option>
+		            <option value="toEnterprise">Enterprise (New)</option>
+		        </select>
+			</div>
+		</div>
         <button onclick="comparePlans()">compare</button>
     </div>
-    <table id="planComparisons" class="pC1">
+    <table id="planComparisons" class="plan-compare">
         <tr>
             <th class="tableTitle">Features Gained</th>
             <th class="tableTitle">Features Lost</th>
             <th class="tableTitle">Price Change</th>
         </tr>
         <tr>
-            <td id="gainedList">
+            <td class="gainedList">
             </td>
-            <td id="lostList">
+            <td class="lostList">
             </td>
-            <td id="priceChange">
-            </td>
-        </tr>
-    </table>
-    <table id="planComparisons2" class="pC2">
-        <tr>
-            <th class="tableTitle">Features Gained</th>
-        </tr>
-        <th class="tableTitle">Features Lost</th>
-        </tr>
-        <tr>
-            <th class="tableTitle">Price Change</th>
-        </tr>
-        <tr>
-            <td id="gainedList2">
-            </td>
-            <td id="lostList2">
-            </td>
-            <td id="priceChange2">
+            <td class="priceChange">
             </td>
         </tr>
     </table>
+    <section id="planComparisons2" class="plan-compare">
+        <div class="compare-section">
+			<h2 class="tableTitle">Features Gained</h2>
+			<div class="gainedList"></div>
+		</div>
+		<div class="compare-section">
+			<h2 class="tableTitle">Features Lost</h2>
+			<div class="lostList"></div>
+		</div>
+		<div class="compare-section">
+			<h2 class="tableTitle">Price Change</h2>
+			<div class="priceChange"></div>
+		</div>
+    </section>
     <span id="signature">A tool by <a href="https://github.com/Bairdley">Brad Mitchell</a></span>
 </body>
 

@@ -113,7 +113,7 @@ var comparePlans = function() {
                                         '<p><strong>Client will need to discuss exact pricing with a sales representative.</strong></p>';
             } else {
                   priceIt[y].innerHTML += '<p>$' + fromPrice + ' to $' + toPrice + '</p>' +
-                                         '<p><strong>$' + priceDifference + ' difference</strong></p>';
+                                          '<p><strong>$' + priceDifference + ' difference</strong></p>';
               }
             var showComparisons = document.getElementsByClassName('plan-compare');
             for (var i = 0; i < 2; i ++) {

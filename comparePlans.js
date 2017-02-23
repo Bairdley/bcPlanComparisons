@@ -1,7 +1,7 @@
 /********************************
 PLAN DETAILS & GETTING USER INPUT
 ********************************/
-
+console.log('y')
 //Name, Features, and Price
 var planDetails = [
     'Name',
@@ -122,4 +122,3 @@ var comparePlans = function() {
         }
     }
 }
-​
